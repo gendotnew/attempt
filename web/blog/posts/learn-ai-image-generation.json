@@ -1,0 +1,277 @@
+{
+  "slug": "learn-ai-image-generation",
+  "title": "AI product photography with Gen.new: a practical guide",
+  "description": "Learn how to create and edit AI product photos with Gen.new, compare references in Studio, and turn one image into a matching campaign banner.",
+  "category": "AI & creative tools",
+  "date": "2026-11-14",
+  "author": "Learn Anything",
+  "summary": "Take a product reference from the first prompt to an edited photo and a matching banner in Gen.new’s creative workspace.",
+  "intro": [
+    {
+      "type": "paragraph",
+      "parts": [
+        {
+          "text": "Gen.new",
+          "href": "https://gen.new/"
+        },
+        {
+          "text": " brings AI chat, image generation, and a Studio canvas into one creative workspace. You can start with a product reference, describe the scene you want, and keep the reference and different versions together while you refine the result."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "This guide shows how to use that workflow for a product photo and a matching promotional banner. It combines a reusable prompt exercise with screenshots of the real Gen website, so you can see the interface before trying it. No coding is needed."
+    }
+  ],
+  "sections": [
+    {
+      "id": "meet-gen-new",
+      "title": "1. Get to know Gen.new’s workspace",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The screenshots here come directly from Gen.new. The homepage has a particle orb and a prompt field for starting a conversation. Its public Studio showcase demonstrates a reference image, a product-photo treatment, and a matching launch banner side by side."
+        },
+        {
+          "type": "image",
+          "src": "/blog/gen-new-homepage-1440.webp",
+          "width": 1440,
+          "height": 1000,
+          "srcset": "/blog/gen-new-homepage-720.webp 720w, /blog/gen-new-homepage-1440.webp 1440w",
+          "alt": "The real Gen.new homepage with its rainbow particle orb, Your AI creative workspace heading, and prompt input",
+          "caption": "The live Gen.new homepage, captured while signed out on 14 November 2026."
+        },
+        {
+          "type": "paragraph",
+          "text": "The full Studio is a canvas for arranging references and outputs. Chat is useful when you want to describe a task in plain language; Studio is useful when you want to compare visual directions and keep the project in view. Sign in when the app asks you to, then choose the workflow that fits your task."
+        },
+        {
+          "type": "paragraph",
+          "text": "For this exercise, stay with image creation and editing. Gen also offers other creative tools, but a product-photo project does not need a video or 3D generation. Model selection and generation use your available allowance; check the current plan details inside Gen."
+        }
+      ]
+    },
+    {
+      "id": "start-with-a-brief",
+      "title": "2. Write a product-photo brief",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Before generating, decide what the image needs to communicate. Use a product photo you own or have permission to use. For an easy practice brief, imagine a small ceramics shop that wants a calm, simple image of a cream mug for a product page. The screenshot above shows Gen’s existing perfume example; the mug prompt below is a separate exercise you can adapt to your own product."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Subject: one cream ceramic mug, with its handle visible.",
+            "Setting: a pale stone surface and a simple backdrop.",
+            "Lighting: soft window light from the left.",
+            "Composition: eye-level view, subject slightly right of center.",
+            "Constraints: no lettering, extra objects, or invented logos."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "This brief becomes your checklist. If you start by asking for something merely ‘beautiful’ or ‘cinematic,’ you have no clear way to decide whether the output solves your problem."
+        }
+      ]
+    },
+    {
+      "id": "choose-your-input",
+      "title": "3. Add your reference and choose what to preserve",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Text-to-image is useful for inventing a fictional object or exploring a visual direction. A reference image is more appropriate when an existing product, person, or composition needs to remain recognizable. Upload a photo you own or have permission to use, and say which details should stay unchanged."
+        },
+        {
+          "type": "paragraph",
+          "text": "An image generator can still change a reference’s proportions, colors, or surface details. A reference is guidance, not a guarantee of an exact copy. For a real shop listing, compare the result against the actual product before publishing. Use a conventional photo editor when exact product fidelity matters more than creating a new scene."
+        },
+        {
+          "type": "paragraph",
+          "text": "For the fictional mug exercise, a text prompt is enough. For a mug you actually sell, start with a clear, evenly lit photo and keep the original beside every revision. Avoid uploading private documents or customer information as visual references."
+        },
+        {
+          "type": "paragraph",
+          "text": "In Gen, attach your reference before sending the request. In Studio, you can keep the original on the canvas and select the image you want the next instruction to address. Say whether you want a new scene around the same product or a different product concept; those are different assignments."
+        }
+      ]
+    },
+    {
+      "id": "write-a-useful-prompt",
+      "title": "4. Generate your first image in Gen.new",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A practical prompt describes the subject, setting, light, composition, and constraints. You don’t need a long chain of quality adjectives. Start with the details that would help a photographer understand the assignment."
+        },
+        {
+          "type": "prompt",
+          "label": "Starting prompt",
+          "text": "Create a square product photograph of one cream ceramic mug with a rounded handle. Place it on pale limestone against a warm off-white background. Soft daylight enters from the left, with a natural shadow on the right. Eye-level camera, handle visible, mug slightly right of center with generous empty space. No text, logos, flowers, or extra objects."
+        },
+        {
+          "type": "paragraph",
+          "text": "Use Gen’s product-photo starting point or enter the prompt in the app with your reference attached. If an aspect-ratio control is available, select square there as well. Start with one result, inspect it, and decide what to change before spending allowance on more variations."
+        }
+      ]
+    },
+    {
+      "id": "make-one-change",
+      "title": "5. Edit the selected result",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Look at the first output before writing another prompt. Is the handle hidden? Is the lighting too harsh? Does the background compete with the product? Pick the most important problem and correct that alone. Changing the camera, subject, lighting, and background together makes it difficult to learn which instruction helped."
+        },
+        {
+          "type": "prompt",
+          "label": "Example revision",
+          "text": "Use the attached image as the reference. Keep the mug, handle, camera angle, and lighting unchanged. Change only the background from warm off-white to a muted sage green. Preserve the natural contact shadow. Do not add text or other objects."
+        },
+        {
+          "type": "paragraph",
+          "text": "In Studio, select or attach the image you mean to edit before sending the next prompt. A request saying only ‘make it green’ could mean the product, background, or entire scene. Name the target and the details to preserve. Keep the original version alongside the revision so you can compare them."
+        }
+      ]
+    },
+    {
+      "id": "check-the-result",
+      "title": "6. Check the photo against your brief",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "An attractive image can still be the wrong image. View the result both at full size and at the size people will actually see on a phone. Use these checks to judge it against your original brief."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Product: is there exactly one mug, with a plausible rim, base, and handle?",
+            "Fidelity: if you used a real reference, did the shape, finish, and color stay accurate?",
+            "Light: do the highlight, contact shadow, and background agree with each other?",
+            "Composition: is the subject easy to recognize when the image is small?",
+            "Artifacts: inspect edges, reflections, lettering, and repeated details closely.",
+            "Purpose: does the image fit the intended crop and leave room for any later layout?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Save a promising version before making another edit. If a revision fixes the background but damages the handle, return to the saved version rather than trying to repair an increasingly distorted image."
+        }
+      ]
+    },
+    {
+      "id": "create-a-matching-banner",
+      "title": "7. Turn the same reference into a banner",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Once you have a useful photo, reuse the reference and visual direction for a wider format. A banner needs room for a headline and a clear subject; simply cropping a square product image may not leave enough space."
+        },
+        {
+          "type": "prompt",
+          "label": "Banner prompt to adapt in Gen",
+          "text": "Use the attached product image as the reference for a wide launch banner. Keep the product’s shape, finish, and color consistent. Position it on the right with empty space on the left for a headline. Keep the same soft lighting and muted background. Do not add text or logos."
+        },
+        {
+          "type": "paragraph",
+          "text": "Gen’s homepage showcase illustrates this reference-to-photo-to-banner sequence with the perfume collection shown above. For your own project, keep the original, the chosen product photo, and the banner together in Studio. Review the product details again after changing the composition."
+        },
+        {
+          "type": "paragraph",
+          "text": "If exact lettering or a specific brand layout is important, add or review that typography as a separate design step. An attractive banner still needs a readable message, an accurate product, and the right dimensions for where you intend to use it."
+        }
+      ]
+    },
+    {
+      "id": "turn-it-into-practice",
+      "title": "8. Save what worked and keep learning",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Keep a short record of your brief, prompt, selected model, reference, and most useful revision. Save the output you chose and note why it was the best fit. In Studio, keeping those versions together makes it easier to carry the same visual direction into the next asset."
+        },
+        {
+          "type": "paragraph",
+          "text": "For your next session, reuse the same brief and change just the lighting. Then try the same object with a different crop. Compare results side by side. These controlled exercises help you learn visual direction as well as prompting."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "text": "Explore photography",
+              "href": "/photography",
+              "description": "to understand light, framing, and perspective."
+            },
+            {
+              "text": "Explore design",
+              "href": "/design",
+              "description": "to build your sense of hierarchy and composition."
+            },
+            {
+              "text": "Explore generative machine learning",
+              "href": "/generative-machine-learning",
+              "description": "to learn more about the ideas behind generative tools."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is Gen.new?",
+      "answer": "Gen.new is an AI creative workspace for chat and creative media, with a Studio canvas for organizing references and results. This guide focuses on its product-photo and image-editing workflow."
+    },
+    {
+      "question": "Can I try Gen.new for free?",
+      "answer": "Gen offers a limited free allowance and paid plans. Check the current allowance, model access, and prices on Gen.new before generating; each generation uses the available budget."
+    },
+    {
+      "question": "Do I need to know how to code?",
+      "answer": "No. This exercise uses plain-language prompts and optional reference images. Coding becomes useful if you later want to automate a workflow or integrate a model into an application."
+    },
+    {
+      "question": "Why does the image change when I repeat a prompt?",
+      "answer": "Generation can be stochastic. Some tools expose a seed that can make comparisons more controlled, but reproducibility also depends on the model, settings, and provider. Save the actual outputs you want to keep."
+    },
+    {
+      "question": "Can I use generated product photos commercially?",
+      "answer": "Check the tool and model’s current terms, your rights to any reference images, and whether the result accurately represents the product. An AI-generated image does not automatically clear trademarks, copyright, or other rights."
+    },
+    {
+      "question": "What should I learn after prompting?",
+      "answer": "Practice photography fundamentals, composition, and basic image editing. Knowing what makes an image useful helps you write better instructions and recognize when a conventional edit will work better than another generation."
+    }
+  ],
+  "seoTitle": "AI product photography with Gen.new | Learn Anything",
+  "cover": {
+    "src": "/blog/gen-new-studio-product-photo-1600.webp",
+    "width": 1600,
+    "height": 1022,
+    "srcset": "/blog/gen-new-studio-product-photo-800.webp 800w, /blog/gen-new-studio-product-photo-1600.webp 1600w",
+    "alt": "Gen.new’s Studio showcase displaying a perfume reference, a selected product photo, and a matching launch banner",
+    "caption": "Screenshot of the interactive Studio showcase on Gen.new’s live homepage, captured 14 November 2026. These are the site’s existing example assets, not new outputs generated for this guide."
+  },
+  "socialImage": {
+    "src": "/blog/gen-new-studio-product-photo-social.jpg",
+    "width": 1200,
+    "height": 630,
+    "alt": "The actual Gen.new Studio showcase with its reference image, product photo, and campaign banner"
+  },
+  "product": {
+    "name": "Gen.new",
+    "url": "https://gen.new/",
+    "description": "An AI creative workspace combining chat, image generation and editing, and a Studio canvas."
+  },
+  "startLink": {
+    "href": "https://gen.new/ai-product-photography",
+    "text": "Try product photography in Gen.new"
+  },
+  "endLink": {
+    "href": "https://gen.new/ai-product-photography",
+    "text": "Start your product photo in Gen.new"
+  },
+  "disclosure": "Publisher note: Gen is another project from Learn Anything’s owner. This is a product walkthrough, not an independent review."
+}

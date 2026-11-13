@@ -120,6 +120,13 @@ const SidebarContent: React.FC = () => {
     <nav className="relative flex h-full w-full shrink-0 flex-col bg-[var(--body-background)]">
       <div>
         <LogoAndSearch />
+        <a
+          href="/blog/"
+          className="mx-4 mt-2 flex items-center gap-2 rounded-md px-2 py-2 text-sm text-muted-foreground hover:bg-secondary/40 hover:text-foreground focus-visible:outline focus-visible:outline-2"
+        >
+          <LaIcon name="BookOpen" aria-hidden="true" />
+          Blog
+        </a>
       </div>
       <div className="relative mt-1.5 flex grow flex-col overflow-y-auto rounded-md px-3 outline-none">
         <div className="h-2 shrink-0" />

@@ -4,6 +4,7 @@ import {
   Outlet,
   ScrollRestoration,
   createRootRouteWithContext,
+  notFound,
 } from "@tanstack/react-router"
 import { createServerFn, Meta, Scripts } from "@tanstack/start"
 import * as React from "react"
@@ -75,6 +76,13 @@ export const Route = createRootRouteWithContext<{
   },
 
   beforeLoad: async (ctx) => {
+    if (
+      ctx.location.pathname === "/blog" ||
+      ctx.location.pathname.startsWith("/blog/")
+    ) {
+      throw notFound()
+    }
+
     try {
       // Handle explicit null auth (logged out state)
       if (ctx.context.auth === null) {

@@ -1,0 +1,41 @@
+{
+  "source": "https://gen.new/home",
+  "capturedAtUtc": "2026-11-13T23:29:08.925Z",
+  "capturedLocalDate": "2026-11-14",
+  "timezone": "Europe/Madrid",
+  "method": "Direct Chromium screenshots of the live public Gen website, signed out. WebP variants are resized and compressed; social JPEG is fitted with black padding. No generated or reconstructed UI.",
+  "studioDescription": "Public interactive Studio showcase. This is a prerecorded marketing example, not a new generation made for the article.",
+  "paidGenerations": 0,
+  "files": [
+    {
+      "file": "gen-new-studio-product-photo-800.webp",
+      "width": 800,
+      "height": 511,
+      "bytes": 25628
+    },
+    {
+      "file": "gen-new-studio-product-photo-1600.webp",
+      "width": 1600,
+      "height": 1022,
+      "bytes": 73258
+    },
+    {
+      "file": "gen-new-homepage-720.webp",
+      "width": 720,
+      "height": 500,
+      "bytes": 14126
+    },
+    {
+      "file": "gen-new-homepage-1440.webp",
+      "width": 1440,
+      "height": 1000,
+      "bytes": 51812
+    },
+    {
+      "file": "gen-new-studio-product-photo-social.jpg",
+      "width": 1200,
+      "height": 630,
+      "bytes": 58133
+    }
+  ]
+}

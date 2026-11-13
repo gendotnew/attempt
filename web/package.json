@@ -4,8 +4,11 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
-    "build": "vinxi build",
+    "dev": "node scripts/build-blog.mjs && vinxi dev",
+    "build": "node scripts/build-blog.mjs && vinxi build",
+    "blog:build": "node scripts/build-blog.mjs",
+    "blog:dev": "node --watch scripts/preview-blog.mjs",
+    "blog:test": "node --test scripts/blog.test.mjs",
     "start": "vinxi start",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",

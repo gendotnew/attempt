@@ -32,6 +32,13 @@ function LandingComponent() {
         filter_query={filterQuery}
       />
 
+      <a
+        href="/blog/"
+        className="absolute right-5 top-5 z-10 rounded-md px-3 py-2 text-sm text-muted-foreground hover:text-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 sm:right-8 sm:top-6"
+      >
+        Blog
+      </a>
+
       <div className="absolute left-1/2 top-1/2 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 transform max-sm:px-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
