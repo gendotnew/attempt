@@ -46,7 +46,7 @@ RPC/API endpoints and sends only public GET/HEAD app requests to Node.
 TLS uses `/etc/letsencrypt/live/learn-anything.xyz/`. Initial migration may use
 manual DNS validation while Vercel still serves the domain. After the cutover,
 use `certbot reconfigure --cert-name learn-anything.xyz --webroot
--w /var/lib/learn-anything/acme --deploy-hook 'nginx -t && systemctl reload nginx'
+-w /var/lib/learn-anything/acme --preferred-challenges http --deploy-hook 'nginx -t && systemctl reload nginx'
 --non-interactive` and verify a dry-run renewal. This replaces the temporary DNS
 validation with automatic HTTP renewal. Never disable TLS verification.
 
