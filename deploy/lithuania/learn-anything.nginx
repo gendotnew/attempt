@@ -31,6 +31,11 @@ server {
     add_header Strict-Transport-Security "max-age=31536000" always;
     add_header X-Learn-Anything-Origin lithuania always;
 
+    location ^~ /.well-known/acme-challenge/ {
+        root /var/lib/learn-anything/acme;
+        default_type text/plain;
+        try_files $uri =404;
+    }
     location ~ /\. { return 404; }
     location = /_server { return 404; }
     location ^~ /_server/ { return 404; }
