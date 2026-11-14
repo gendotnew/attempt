@@ -5,11 +5,7 @@ import { ConfirmDialogProvider } from "@omit/react-confirm-dialog"
 
 import { Sidebar } from "~/components/sidebar/sidebar"
 import { TooltipProvider } from "~/components/ui/tooltip"
-import { JazzAndAuth } from "~/lib/providers/jazz-provider"
-import { Shortcut } from "~/components/shortcut/shortcut"
-import { Onboarding } from "~/components/Onboarding"
-import { GlobalKeyboardHandler } from "~/components/GlobalKeyboardHandler"
-import { CommandPalette } from "~/components/command-palette/command-palette"
+import { JazzGuest } from "~/lib/providers/jazz-provider"
 
 export const Route = createFileRoute("/_layout/_pages")({
   component: PagesLayout,
@@ -20,9 +16,9 @@ function PagesLayout() {
     <JotaiProvider>
       <TooltipProvider>
         <ConfirmDialogProvider>
-          <JazzAndAuth>
+          <JazzGuest>
             <LayoutContent />
-          </JazzAndAuth>
+          </JazzGuest>
         </ConfirmDialogProvider>
       </TooltipProvider>
     </JotaiProvider>
@@ -35,10 +31,6 @@ function LayoutContent() {
       <Toaster expand={false} />
       <div className="flex size-full min-h-full flex-row items-stretch overflow-hidden">
         <Sidebar />
-        <Shortcut />
-        <GlobalKeyboardHandler />
-        <CommandPalette />
-        <Onboarding />
 
         <MainContent />
       </div>

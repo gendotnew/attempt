@@ -1,5 +1,5 @@
 import * as React from "react"
-import { createFileRoute, useParams } from "@tanstack/react-router"
+import { createFileRoute, notFound, useParams } from "@tanstack/react-router"
 import { useAccountOrGuest, useCoState } from "@/lib/providers/jazz-provider"
 import { GraphData, JAZZ_GLOBAL_GROUP_ID } from "@/lib/constants"
 import { Topic } from "@/lib/schema"
@@ -10,6 +10,9 @@ import { TopicDetailHeader } from "./-header"
 import { TopicDetailList } from "./-list"
 
 export const Route = createFileRoute("/_layout/_pages/(topic)/$")({
+  beforeLoad: ({ params }) => {
+    if (!GraphData.some((node) => node.name === params._splat)) throw notFound()
+  },
   component: TopicDetailComponent,
 })
 
@@ -17,7 +20,7 @@ export const openPopoverForIdAtom = atom<string | null>(null)
 
 export function TopicDetailComponent() {
   const params = useParams({ from: "/_layout/_pages/(topic)/$" })
-  const { me } = useAccountOrGuest({ root: { personalLinks: [{}] } })
+  const { me } = useAccountOrGuest()
 
   const topicID = React.useMemo(
     () =>

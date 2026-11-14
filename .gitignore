@@ -23,3 +23,7 @@ past-*
 *.db
 .repo_ignore
 x/
+deploy/lithuania/runtime.tar.gz
+deploy/lithuania/release.json
+deploy/lithuania/site.env
+__pycache__/

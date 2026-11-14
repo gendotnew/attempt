@@ -9,9 +9,6 @@ export function createRouter() {
     defaultPreload: "intent",
     defaultErrorComponent: DefaultCatchBoundary,
     defaultNotFoundComponent: () => <NotFound />,
-    context: {
-      auth: undefined,
-    },
   })
 
   return router

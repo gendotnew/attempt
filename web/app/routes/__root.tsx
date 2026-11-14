@@ -1,14 +1,13 @@
 /// <reference types="vite/client" />
-import { getAuth } from "@clerk/tanstack-start/server"
 import {
   Outlet,
   ScrollRestoration,
-  createRootRouteWithContext,
+  createRootRoute,
   notFound,
+  redirect,
 } from "@tanstack/react-router"
-import { createServerFn, Meta, Scripts } from "@tanstack/start"
+import { Meta, Scripts } from "@tanstack/start"
 import * as React from "react"
-import { getWebRequest } from "vinxi/http"
 import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary.js"
 import { NotFound } from "~/components/NotFound.js"
 import { seo } from "~/lib/utils/seo"
@@ -23,15 +22,7 @@ export const TanStackRouterDevtools =
         })),
       )
 
-export const fetchClerkAuth = createServerFn().handler(async () => {
-  const auth = await getAuth(getWebRequest())
-
-  return auth
-})
-
-export const Route = createRootRouteWithContext<{
-  auth?: ReturnType<typeof getAuth> | null
-}>()({
+export const Route = createRootRoute({
   head() {
     return {
       meta: [
@@ -75,31 +66,19 @@ export const Route = createRootRouteWithContext<{
     }
   },
 
-  beforeLoad: async (ctx) => {
+  beforeLoad: (ctx) => {
+    if (
+      /^\/(links|pages|topics|tasks|journals|profile|settings|onboarding|community)(\/|$)/.test(
+        ctx.location.pathname,
+      )
+    ) {
+      throw redirect({ to: "/", replace: true })
+    }
     if (
       ctx.location.pathname === "/blog" ||
       ctx.location.pathname.startsWith("/blog/")
     ) {
       throw notFound()
-    }
-
-    try {
-      // Handle explicit null auth (logged out state)
-      if (ctx.context.auth === null) {
-        return { auth: null }
-      }
-
-      // Use existing auth if available
-      if (ctx.context.auth) {
-        return { auth: ctx.context.auth }
-      }
-
-      // Fetch new auth state
-      const auth = await fetchClerkAuth()
-      return { auth }
-    } catch (error) {
-      console.error("Error in beforeLoad:", error)
-      return { auth: null }
     }
   },
   errorComponent: (props) => {

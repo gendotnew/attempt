@@ -16,22 +16,11 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as LayoutImport } from './routes/_layout'
 import { Route as LayoutPagesImport } from './routes/_layout/_pages'
 import { Route as LayoutlandingIndexImport } from './routes/_layout/(landing)/index'
-import { Route as LayoutPagesProtectedImport } from './routes/_layout/_pages/_protected'
 import { Route as LayoutauthAuthImport } from './routes/_layout/(auth)/_auth'
 import { Route as LayoutPagesSearchIndexImport } from './routes/_layout/_pages/search/index'
 import { Route as LayoutPagestopicSplatImport } from './routes/_layout/_pages/(topic)/$'
-import { Route as LayoutPagesProtectedTopicsIndexImport } from './routes/_layout/_pages/_protected/topics/index'
-import { Route as LayoutPagesProtectedTasksIndexImport } from './routes/_layout/_pages/_protected/tasks/index'
-import { Route as LayoutPagesProtectedSettingsIndexImport } from './routes/_layout/_pages/_protected/settings/index'
-import { Route as LayoutPagesProtectedProfileIndexImport } from './routes/_layout/_pages/_protected/profile/index'
-import { Route as LayoutPagesProtectedPagesIndexImport } from './routes/_layout/_pages/_protected/pages/index'
-import { Route as LayoutPagesProtectedOnboardingIndexImport } from './routes/_layout/_pages/_protected/onboarding/index'
-import { Route as LayoutPagesProtectedLinksIndexImport } from './routes/_layout/_pages/_protected/links/index'
-import { Route as LayoutPagesProtectedJournalsIndexImport } from './routes/_layout/_pages/_protected/journals/index'
 import { Route as LayoutauthAuthSignUpSplatImport } from './routes/_layout/(auth)/_auth.sign-up.$'
 import { Route as LayoutauthAuthSignInSplatImport } from './routes/_layout/(auth)/_auth.sign-in.$'
-import { Route as LayoutPagesProtectedPagesPageIdIndexImport } from './routes/_layout/_pages/_protected/pages/$pageId/index'
-import { Route as LayoutPagesProtectedCommunityTopicNameIndexImport } from './routes/_layout/_pages/_protected/community/$topicName/index'
 
 // Create Virtual Routes
 
@@ -60,11 +49,6 @@ const LayoutlandingIndexRoute = LayoutlandingIndexImport.update({
   getParentRoute: () => LayoutRoute,
 } as any)
 
-const LayoutPagesProtectedRoute = LayoutPagesProtectedImport.update({
-  id: '/_protected',
-  getParentRoute: () => LayoutPagesRoute,
-} as any)
-
 const LayoutauthAuthRoute = LayoutauthAuthImport.update({
   id: '/_auth',
   getParentRoute: () => LayoutauthRoute,
@@ -82,62 +66,6 @@ const LayoutPagestopicSplatRoute = LayoutPagestopicSplatImport.update({
   getParentRoute: () => LayoutPagesRoute,
 } as any)
 
-const LayoutPagesProtectedTopicsIndexRoute =
-  LayoutPagesProtectedTopicsIndexImport.update({
-    id: '/topics/',
-    path: '/topics/',
-    getParentRoute: () => LayoutPagesProtectedRoute,
-  } as any)
-
-const LayoutPagesProtectedTasksIndexRoute =
-  LayoutPagesProtectedTasksIndexImport.update({
-    id: '/tasks/',
-    path: '/tasks/',
-    getParentRoute: () => LayoutPagesProtectedRoute,
-  } as any)
-
-const LayoutPagesProtectedSettingsIndexRoute =
-  LayoutPagesProtectedSettingsIndexImport.update({
-    id: '/settings/',
-    path: '/settings/',
-    getParentRoute: () => LayoutPagesProtectedRoute,
-  } as any)
-
-const LayoutPagesProtectedProfileIndexRoute =
-  LayoutPagesProtectedProfileIndexImport.update({
-    id: '/profile/',
-    path: '/profile/',
-    getParentRoute: () => LayoutPagesProtectedRoute,
-  } as any)
-
-const LayoutPagesProtectedPagesIndexRoute =
-  LayoutPagesProtectedPagesIndexImport.update({
-    id: '/pages/',
-    path: '/pages/',
-    getParentRoute: () => LayoutPagesProtectedRoute,
-  } as any)
-
-const LayoutPagesProtectedOnboardingIndexRoute =
-  LayoutPagesProtectedOnboardingIndexImport.update({
-    id: '/onboarding/',
-    path: '/onboarding/',
-    getParentRoute: () => LayoutPagesProtectedRoute,
-  } as any)
-
-const LayoutPagesProtectedLinksIndexRoute =
-  LayoutPagesProtectedLinksIndexImport.update({
-    id: '/links/',
-    path: '/links/',
-    getParentRoute: () => LayoutPagesProtectedRoute,
-  } as any)
-
-const LayoutPagesProtectedJournalsIndexRoute =
-  LayoutPagesProtectedJournalsIndexImport.update({
-    id: '/journals/',
-    path: '/journals/',
-    getParentRoute: () => LayoutPagesProtectedRoute,
-  } as any)
-
 const LayoutauthAuthSignUpSplatRoute = LayoutauthAuthSignUpSplatImport.update({
   id: '/sign-up/$',
   path: '/sign-up/$',
@@ -149,20 +77,6 @@ const LayoutauthAuthSignInSplatRoute = LayoutauthAuthSignInSplatImport.update({
   path: '/sign-in/$',
   getParentRoute: () => LayoutauthAuthRoute,
 } as any)
-
-const LayoutPagesProtectedPagesPageIdIndexRoute =
-  LayoutPagesProtectedPagesPageIdIndexImport.update({
-    id: '/pages/$pageId/',
-    path: '/pages/$pageId/',
-    getParentRoute: () => LayoutPagesProtectedRoute,
-  } as any)
-
-const LayoutPagesProtectedCommunityTopicNameIndexRoute =
-  LayoutPagesProtectedCommunityTopicNameIndexImport.update({
-    id: '/community/$topicName/',
-    path: '/community/$topicName/',
-    getParentRoute: () => LayoutPagesProtectedRoute,
-  } as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -195,13 +109,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof LayoutauthAuthImport
       parentRoute: typeof LayoutauthRoute
-    }
-    '/_layout/_pages/_protected': {
-      id: '/_layout/_pages/_protected'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof LayoutPagesProtectedImport
-      parentRoute: typeof LayoutPagesImport
     }
     '/_layout/(landing)/': {
       id: '/_layout/(landing)/'
@@ -238,123 +145,17 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutauthAuthSignUpSplatImport
       parentRoute: typeof LayoutauthAuthImport
     }
-    '/_layout/_pages/_protected/journals/': {
-      id: '/_layout/_pages/_protected/journals/'
-      path: '/journals'
-      fullPath: '/journals'
-      preLoaderRoute: typeof LayoutPagesProtectedJournalsIndexImport
-      parentRoute: typeof LayoutPagesProtectedImport
-    }
-    '/_layout/_pages/_protected/links/': {
-      id: '/_layout/_pages/_protected/links/'
-      path: '/links'
-      fullPath: '/links'
-      preLoaderRoute: typeof LayoutPagesProtectedLinksIndexImport
-      parentRoute: typeof LayoutPagesProtectedImport
-    }
-    '/_layout/_pages/_protected/onboarding/': {
-      id: '/_layout/_pages/_protected/onboarding/'
-      path: '/onboarding'
-      fullPath: '/onboarding'
-      preLoaderRoute: typeof LayoutPagesProtectedOnboardingIndexImport
-      parentRoute: typeof LayoutPagesProtectedImport
-    }
-    '/_layout/_pages/_protected/pages/': {
-      id: '/_layout/_pages/_protected/pages/'
-      path: '/pages'
-      fullPath: '/pages'
-      preLoaderRoute: typeof LayoutPagesProtectedPagesIndexImport
-      parentRoute: typeof LayoutPagesProtectedImport
-    }
-    '/_layout/_pages/_protected/profile/': {
-      id: '/_layout/_pages/_protected/profile/'
-      path: '/profile'
-      fullPath: '/profile'
-      preLoaderRoute: typeof LayoutPagesProtectedProfileIndexImport
-      parentRoute: typeof LayoutPagesProtectedImport
-    }
-    '/_layout/_pages/_protected/settings/': {
-      id: '/_layout/_pages/_protected/settings/'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof LayoutPagesProtectedSettingsIndexImport
-      parentRoute: typeof LayoutPagesProtectedImport
-    }
-    '/_layout/_pages/_protected/tasks/': {
-      id: '/_layout/_pages/_protected/tasks/'
-      path: '/tasks'
-      fullPath: '/tasks'
-      preLoaderRoute: typeof LayoutPagesProtectedTasksIndexImport
-      parentRoute: typeof LayoutPagesProtectedImport
-    }
-    '/_layout/_pages/_protected/topics/': {
-      id: '/_layout/_pages/_protected/topics/'
-      path: '/topics'
-      fullPath: '/topics'
-      preLoaderRoute: typeof LayoutPagesProtectedTopicsIndexImport
-      parentRoute: typeof LayoutPagesProtectedImport
-    }
-    '/_layout/_pages/_protected/community/$topicName/': {
-      id: '/_layout/_pages/_protected/community/$topicName/'
-      path: '/community/$topicName'
-      fullPath: '/community/$topicName'
-      preLoaderRoute: typeof LayoutPagesProtectedCommunityTopicNameIndexImport
-      parentRoute: typeof LayoutPagesProtectedImport
-    }
-    '/_layout/_pages/_protected/pages/$pageId/': {
-      id: '/_layout/_pages/_protected/pages/$pageId/'
-      path: '/pages/$pageId'
-      fullPath: '/pages/$pageId'
-      preLoaderRoute: typeof LayoutPagesProtectedPagesPageIdIndexImport
-      parentRoute: typeof LayoutPagesProtectedImport
-    }
   }
 }
 
 // Create and export the route tree
 
-interface LayoutPagesProtectedRouteChildren {
-  LayoutPagesProtectedJournalsIndexRoute: typeof LayoutPagesProtectedJournalsIndexRoute
-  LayoutPagesProtectedLinksIndexRoute: typeof LayoutPagesProtectedLinksIndexRoute
-  LayoutPagesProtectedOnboardingIndexRoute: typeof LayoutPagesProtectedOnboardingIndexRoute
-  LayoutPagesProtectedPagesIndexRoute: typeof LayoutPagesProtectedPagesIndexRoute
-  LayoutPagesProtectedProfileIndexRoute: typeof LayoutPagesProtectedProfileIndexRoute
-  LayoutPagesProtectedSettingsIndexRoute: typeof LayoutPagesProtectedSettingsIndexRoute
-  LayoutPagesProtectedTasksIndexRoute: typeof LayoutPagesProtectedTasksIndexRoute
-  LayoutPagesProtectedTopicsIndexRoute: typeof LayoutPagesProtectedTopicsIndexRoute
-  LayoutPagesProtectedCommunityTopicNameIndexRoute: typeof LayoutPagesProtectedCommunityTopicNameIndexRoute
-  LayoutPagesProtectedPagesPageIdIndexRoute: typeof LayoutPagesProtectedPagesPageIdIndexRoute
-}
-
-const LayoutPagesProtectedRouteChildren: LayoutPagesProtectedRouteChildren = {
-  LayoutPagesProtectedJournalsIndexRoute:
-    LayoutPagesProtectedJournalsIndexRoute,
-  LayoutPagesProtectedLinksIndexRoute: LayoutPagesProtectedLinksIndexRoute,
-  LayoutPagesProtectedOnboardingIndexRoute:
-    LayoutPagesProtectedOnboardingIndexRoute,
-  LayoutPagesProtectedPagesIndexRoute: LayoutPagesProtectedPagesIndexRoute,
-  LayoutPagesProtectedProfileIndexRoute: LayoutPagesProtectedProfileIndexRoute,
-  LayoutPagesProtectedSettingsIndexRoute:
-    LayoutPagesProtectedSettingsIndexRoute,
-  LayoutPagesProtectedTasksIndexRoute: LayoutPagesProtectedTasksIndexRoute,
-  LayoutPagesProtectedTopicsIndexRoute: LayoutPagesProtectedTopicsIndexRoute,
-  LayoutPagesProtectedCommunityTopicNameIndexRoute:
-    LayoutPagesProtectedCommunityTopicNameIndexRoute,
-  LayoutPagesProtectedPagesPageIdIndexRoute:
-    LayoutPagesProtectedPagesPageIdIndexRoute,
-}
-
-const LayoutPagesProtectedRouteWithChildren =
-  LayoutPagesProtectedRoute._addFileChildren(LayoutPagesProtectedRouteChildren)
-
 interface LayoutPagesRouteChildren {
-  LayoutPagesProtectedRoute: typeof LayoutPagesProtectedRouteWithChildren
   LayoutPagestopicSplatRoute: typeof LayoutPagestopicSplatRoute
   LayoutPagesSearchIndexRoute: typeof LayoutPagesSearchIndexRoute
 }
 
 const LayoutPagesRouteChildren: LayoutPagesRouteChildren = {
-  LayoutPagesProtectedRoute: LayoutPagesProtectedRouteWithChildren,
   LayoutPagestopicSplatRoute: LayoutPagestopicSplatRoute,
   LayoutPagesSearchIndexRoute: LayoutPagesSearchIndexRoute,
 }
@@ -405,41 +206,21 @@ const LayoutRouteWithChildren =
   LayoutRoute._addFileChildren(LayoutRouteChildren)
 
 export interface FileRoutesByFullPath {
-  '': typeof LayoutPagesProtectedRouteWithChildren
+  '': typeof LayoutPagesRouteWithChildren
   '/': typeof LayoutlandingIndexRoute
   '/$': typeof LayoutPagestopicSplatRoute
   '/search': typeof LayoutPagesSearchIndexRoute
   '/sign-in/$': typeof LayoutauthAuthSignInSplatRoute
   '/sign-up/$': typeof LayoutauthAuthSignUpSplatRoute
-  '/journals': typeof LayoutPagesProtectedJournalsIndexRoute
-  '/links': typeof LayoutPagesProtectedLinksIndexRoute
-  '/onboarding': typeof LayoutPagesProtectedOnboardingIndexRoute
-  '/pages': typeof LayoutPagesProtectedPagesIndexRoute
-  '/profile': typeof LayoutPagesProtectedProfileIndexRoute
-  '/settings': typeof LayoutPagesProtectedSettingsIndexRoute
-  '/tasks': typeof LayoutPagesProtectedTasksIndexRoute
-  '/topics': typeof LayoutPagesProtectedTopicsIndexRoute
-  '/community/$topicName': typeof LayoutPagesProtectedCommunityTopicNameIndexRoute
-  '/pages/$pageId': typeof LayoutPagesProtectedPagesPageIdIndexRoute
 }
 
 export interface FileRoutesByTo {
-  '': typeof LayoutPagesProtectedRouteWithChildren
+  '': typeof LayoutPagesRouteWithChildren
   '/': typeof LayoutlandingIndexRoute
   '/$': typeof LayoutPagestopicSplatRoute
   '/search': typeof LayoutPagesSearchIndexRoute
   '/sign-in/$': typeof LayoutauthAuthSignInSplatRoute
   '/sign-up/$': typeof LayoutauthAuthSignUpSplatRoute
-  '/journals': typeof LayoutPagesProtectedJournalsIndexRoute
-  '/links': typeof LayoutPagesProtectedLinksIndexRoute
-  '/onboarding': typeof LayoutPagesProtectedOnboardingIndexRoute
-  '/pages': typeof LayoutPagesProtectedPagesIndexRoute
-  '/profile': typeof LayoutPagesProtectedProfileIndexRoute
-  '/settings': typeof LayoutPagesProtectedSettingsIndexRoute
-  '/tasks': typeof LayoutPagesProtectedTasksIndexRoute
-  '/topics': typeof LayoutPagesProtectedTopicsIndexRoute
-  '/community/$topicName': typeof LayoutPagesProtectedCommunityTopicNameIndexRoute
-  '/pages/$pageId': typeof LayoutPagesProtectedPagesPageIdIndexRoute
 }
 
 export interface FileRoutesById {
@@ -448,83 +229,29 @@ export interface FileRoutesById {
   '/_layout/_pages': typeof LayoutPagesRouteWithChildren
   '/_layout/(auth)': typeof LayoutauthRouteWithChildren
   '/_layout/(auth)/_auth': typeof LayoutauthAuthRouteWithChildren
-  '/_layout/_pages/_protected': typeof LayoutPagesProtectedRouteWithChildren
   '/_layout/(landing)/': typeof LayoutlandingIndexRoute
   '/_layout/_pages/(topic)/$': typeof LayoutPagestopicSplatRoute
   '/_layout/_pages/search/': typeof LayoutPagesSearchIndexRoute
   '/_layout/(auth)/_auth/sign-in/$': typeof LayoutauthAuthSignInSplatRoute
   '/_layout/(auth)/_auth/sign-up/$': typeof LayoutauthAuthSignUpSplatRoute
-  '/_layout/_pages/_protected/journals/': typeof LayoutPagesProtectedJournalsIndexRoute
-  '/_layout/_pages/_protected/links/': typeof LayoutPagesProtectedLinksIndexRoute
-  '/_layout/_pages/_protected/onboarding/': typeof LayoutPagesProtectedOnboardingIndexRoute
-  '/_layout/_pages/_protected/pages/': typeof LayoutPagesProtectedPagesIndexRoute
-  '/_layout/_pages/_protected/profile/': typeof LayoutPagesProtectedProfileIndexRoute
-  '/_layout/_pages/_protected/settings/': typeof LayoutPagesProtectedSettingsIndexRoute
-  '/_layout/_pages/_protected/tasks/': typeof LayoutPagesProtectedTasksIndexRoute
-  '/_layout/_pages/_protected/topics/': typeof LayoutPagesProtectedTopicsIndexRoute
-  '/_layout/_pages/_protected/community/$topicName/': typeof LayoutPagesProtectedCommunityTopicNameIndexRoute
-  '/_layout/_pages/_protected/pages/$pageId/': typeof LayoutPagesProtectedPagesPageIdIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | ''
-    | '/'
-    | '/$'
-    | '/search'
-    | '/sign-in/$'
-    | '/sign-up/$'
-    | '/journals'
-    | '/links'
-    | '/onboarding'
-    | '/pages'
-    | '/profile'
-    | '/settings'
-    | '/tasks'
-    | '/topics'
-    | '/community/$topicName'
-    | '/pages/$pageId'
+  fullPaths: '' | '/' | '/$' | '/search' | '/sign-in/$' | '/sign-up/$'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | ''
-    | '/'
-    | '/$'
-    | '/search'
-    | '/sign-in/$'
-    | '/sign-up/$'
-    | '/journals'
-    | '/links'
-    | '/onboarding'
-    | '/pages'
-    | '/profile'
-    | '/settings'
-    | '/tasks'
-    | '/topics'
-    | '/community/$topicName'
-    | '/pages/$pageId'
+  to: '' | '/' | '/$' | '/search' | '/sign-in/$' | '/sign-up/$'
   id:
     | '__root__'
     | '/_layout'
     | '/_layout/_pages'
     | '/_layout/(auth)'
     | '/_layout/(auth)/_auth'
-    | '/_layout/_pages/_protected'
     | '/_layout/(landing)/'
     | '/_layout/_pages/(topic)/$'
     | '/_layout/_pages/search/'
     | '/_layout/(auth)/_auth/sign-in/$'
     | '/_layout/(auth)/_auth/sign-up/$'
-    | '/_layout/_pages/_protected/journals/'
-    | '/_layout/_pages/_protected/links/'
-    | '/_layout/_pages/_protected/onboarding/'
-    | '/_layout/_pages/_protected/pages/'
-    | '/_layout/_pages/_protected/profile/'
-    | '/_layout/_pages/_protected/settings/'
-    | '/_layout/_pages/_protected/tasks/'
-    | '/_layout/_pages/_protected/topics/'
-    | '/_layout/_pages/_protected/community/$topicName/'
-    | '/_layout/_pages/_protected/pages/$pageId/'
   fileRoutesById: FileRoutesById
 }
 
@@ -561,7 +288,6 @@ export const routeTree = rootRoute
       "filePath": "_layout/_pages.tsx",
       "parent": "/_layout",
       "children": [
-        "/_layout/_pages/_protected",
         "/_layout/_pages/(topic)/$",
         "/_layout/_pages/search/"
       ]
@@ -579,22 +305,6 @@ export const routeTree = rootRoute
       "children": [
         "/_layout/(auth)/_auth/sign-in/$",
         "/_layout/(auth)/_auth/sign-up/$"
-      ]
-    },
-    "/_layout/_pages/_protected": {
-      "filePath": "_layout/_pages/_protected.tsx",
-      "parent": "/_layout/_pages",
-      "children": [
-        "/_layout/_pages/_protected/journals/",
-        "/_layout/_pages/_protected/links/",
-        "/_layout/_pages/_protected/onboarding/",
-        "/_layout/_pages/_protected/pages/",
-        "/_layout/_pages/_protected/profile/",
-        "/_layout/_pages/_protected/settings/",
-        "/_layout/_pages/_protected/tasks/",
-        "/_layout/_pages/_protected/topics/",
-        "/_layout/_pages/_protected/community/$topicName/",
-        "/_layout/_pages/_protected/pages/$pageId/"
       ]
     },
     "/_layout/(landing)/": {
@@ -616,46 +326,6 @@ export const routeTree = rootRoute
     "/_layout/(auth)/_auth/sign-up/$": {
       "filePath": "_layout/(auth)/_auth.sign-up.$.tsx",
       "parent": "/_layout/(auth)/_auth"
-    },
-    "/_layout/_pages/_protected/journals/": {
-      "filePath": "_layout/_pages/_protected/journals/index.tsx",
-      "parent": "/_layout/_pages/_protected"
-    },
-    "/_layout/_pages/_protected/links/": {
-      "filePath": "_layout/_pages/_protected/links/index.tsx",
-      "parent": "/_layout/_pages/_protected"
-    },
-    "/_layout/_pages/_protected/onboarding/": {
-      "filePath": "_layout/_pages/_protected/onboarding/index.tsx",
-      "parent": "/_layout/_pages/_protected"
-    },
-    "/_layout/_pages/_protected/pages/": {
-      "filePath": "_layout/_pages/_protected/pages/index.tsx",
-      "parent": "/_layout/_pages/_protected"
-    },
-    "/_layout/_pages/_protected/profile/": {
-      "filePath": "_layout/_pages/_protected/profile/index.tsx",
-      "parent": "/_layout/_pages/_protected"
-    },
-    "/_layout/_pages/_protected/settings/": {
-      "filePath": "_layout/_pages/_protected/settings/index.tsx",
-      "parent": "/_layout/_pages/_protected"
-    },
-    "/_layout/_pages/_protected/tasks/": {
-      "filePath": "_layout/_pages/_protected/tasks/index.tsx",
-      "parent": "/_layout/_pages/_protected"
-    },
-    "/_layout/_pages/_protected/topics/": {
-      "filePath": "_layout/_pages/_protected/topics/index.tsx",
-      "parent": "/_layout/_pages/_protected"
-    },
-    "/_layout/_pages/_protected/community/$topicName/": {
-      "filePath": "_layout/_pages/_protected/community/$topicName/index.tsx",
-      "parent": "/_layout/_pages/_protected"
-    },
-    "/_layout/_pages/_protected/pages/$pageId/": {
-      "filePath": "_layout/_pages/_protected/pages/$pageId/index.tsx",
-      "parent": "/_layout/_pages/_protected"
     }
   }
 }

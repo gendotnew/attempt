@@ -6,7 +6,6 @@ import {
   Topic,
 } from "@/lib/schema"
 import { LinkItem } from "./-item"
-import { useAccountOrGuest } from "@/lib/providers/jazz-provider"
 
 export type FlattenedItem =
   | { type: "link"; data: LinkSchema | null }
@@ -25,10 +24,6 @@ export function TopicDetailList({
   activeIndex,
   setActiveIndex,
 }: TopicDetailListProps) {
-  const { me } = useAccountOrGuest({ root: { personalLinks: [{}] } })
-  const personalLinks =
-    !me || me._type === "Anonymous" ? undefined : me.root.personalLinks
-
   const parentRef = React.useRef<HTMLDivElement>(null)
 
   const virtualizer = useVirtualizer({
@@ -66,19 +61,17 @@ export function TopicDetailList({
             key={virtualRow.key}
             data-index={virtualRow.index}
             ref={virtualizer.measureElement}
-            topic={topic}
             link={item.data as LinkSchema}
             isActive={activeIndex === virtualRow.index}
             index={virtualRow.index}
             setActiveIndex={setActiveIndex}
-            personalLinks={personalLinks}
           />
         )
       }
 
       return null
     },
-    [items, topic, activeIndex, setActiveIndex, virtualizer, personalLinks],
+    [items, activeIndex, setActiveIndex, virtualizer],
   )
 
   return (

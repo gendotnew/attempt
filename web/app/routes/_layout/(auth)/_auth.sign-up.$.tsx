@@ -1,14 +1,7 @@
-import { SignUp } from "@clerk/tanstack-start"
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, redirect } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/_layout/(auth)/_auth/sign-up/$")({
-  component: () => <SignUpComponent />,
+  beforeLoad: () => {
+    throw redirect({ to: "/", replace: true })
+  },
 })
-
-function SignUpComponent() {
-  return (
-    <div className="flex justify-center py-24">
-      <SignUp />
-    </div>
-  )
-}

@@ -40,6 +40,7 @@ export const LEARNING_STATES: LearningState[] = [
 
 export const JAZZ_GLOBAL_GROUP_ID = getEnvVariable(
   "VITE_JAZZ_GLOBAL_GROUP_ID",
+  "co_z6pTJeuwVQhUd1irSLciRUFCGRk",
 ) as ID<PublicGlobalGroup>
 
 export const GraphData = Graph as GraphNode[]

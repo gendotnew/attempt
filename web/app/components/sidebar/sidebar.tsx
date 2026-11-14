@@ -4,14 +4,8 @@ import { useAtom } from "jotai"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { isCollapseAtom } from "@/store/sidebar"
-import { useAccountOrGuest } from "@/lib/providers/jazz-provider"
 import { LaIcon } from "@/components/custom/la-icon"
 import { Link, useLocation } from "@tanstack/react-router"
-
-import { PageSection } from "./partials/page-section"
-import { ProfileSection } from "./partials/profile-section"
-import { JournalSection } from "./partials/journal-section"
-import { LinkCollection } from "./partials/link-collection"
 
 interface SidebarItemProps {
   label: string
@@ -114,8 +108,6 @@ const LogoAndSearch: React.FC = () => {
 LogoAndSearch.displayName = "LogoAndSearch"
 
 const SidebarContent: React.FC = () => {
-  const { me } = useAccountOrGuest()
-
   return (
     <nav className="relative flex h-full w-full shrink-0 flex-col bg-[var(--body-background)]">
       <div>
@@ -129,13 +121,19 @@ const SidebarContent: React.FC = () => {
         </a>
       </div>
       <div className="relative mt-1.5 flex grow flex-col overflow-y-auto rounded-md px-3 outline-none">
-        <div className="h-2 shrink-0" />
-        {me?._type === "Account" && <LinkCollection />}
-        {me?._type === "Account" && <JournalSection />}
-        {me?._type === "Account" && <PageSection />}
+        <SidebarItem
+          label="Explore topics"
+          url="/search"
+          icon={<LaIcon name="Compass" />}
+        />
       </div>
-
-      <ProfileSection />
+      <a
+        href="https://github.com/gendotnew/attempt"
+        className="mx-4 mb-4 flex items-center gap-2 rounded-md px-2 py-2 text-sm text-muted-foreground hover:text-foreground"
+      >
+        <LaIcon name="Github" aria-hidden="true" />
+        Source code
+      </a>
     </nav>
   )
 }

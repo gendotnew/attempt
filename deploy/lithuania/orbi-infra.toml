@@ -1,0 +1,17 @@
+[service]
+name = "learn-anything"
+remote_dir = "/opt/learn-anything"
+run_user = "learn-anything"
+
+[runtime]
+setup = ["python3 setup.py"]
+run = "exec /opt/gen-runtime/node-v24.22.1-linux-x64/bin/node --max-old-space-size=256 /opt/learn-anything/current/server/index.mjs"
+
+[network]
+port = 8810
+health_path = "/"
+public = false
+
+[files]
+env_file = "site.env"
+exclude = ["releases", "current", "current.next", "previous", "site.env"]
